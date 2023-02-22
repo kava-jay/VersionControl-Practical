@@ -4,9 +4,11 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <p>
-        Running react App
-      </p>
+      <header className="App-header">
+        <p>
+          Runnig Frontend project
+        </p>
+      </header>
     </div>
   );
 }
