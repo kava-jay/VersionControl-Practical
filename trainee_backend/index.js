@@ -1,26 +1,27 @@
-const http = require('http')
-const port = 4000
-const hostname = '127.0.0.1';
-// Create a server object:
-const server = http.createServer(function (req, res) {
+const express = require('express');
+const app = express(); 
+const bodyParser = require('body-parser'); 
 
-	// Write a response to the client
-	res.write('Hello World')
+app.use(bodyParser.urlencoded({ extended: false }));
 
-	// End the response
-	res.end()
-})
+// Route to Homepage
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/static/app.html');
+});
 
-// Set up our server so it will listen on the port
-server.listen(port, function (error) {
+// Route to Login Page
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/static/login.html');
+});
 
-	// Checking any error occur while listening on port
-	if (error) {
-		console.log('Something went wrong', error);
-	}
-	// Else sent message of listening
-	else {
-		console.log('Server is listening on port' + port);
-         console.log(`Server running at http://${hostname}:${port}/`);
-	}
-})
+app.post('/login', (req, res) => {
+  // Insert Login Code Here
+  let username = req.body.username;
+  let password = req.body.password;
+  res.send(`Username: ${username} Password: ${password}`);
+});
+
+const port = 5000 // Port we will listen on
+
+// Function to listen on the port
+app.listen(port, () => console.log(`This app is listening on port ${port}`));
