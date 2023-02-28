@@ -1,5 +1,7 @@
 # Getting Started with Create Trainee_frontend
 
+#### This project is made with using React js.
+
 ## Available Scripts
 
 In the project directory, you can run:
