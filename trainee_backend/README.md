@@ -1,6 +1,8 @@
 # Getting Started with Create Trainee_backend
 
-## Available Scripts
+#### This project is made with using Node js.
+
+### Available Scripts
 
 In the project directory, you can run:
 
